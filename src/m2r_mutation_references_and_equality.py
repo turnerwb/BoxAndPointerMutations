@@ -7,8 +7,8 @@ This module demonstrates:
  5. Two equality operators:   is   ==
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Wesley Turner.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -61,7 +61,7 @@ def main():
 
     # The next line shows that the INSIDES of   point   has changed.
     print('After: ', point)  # Look at what gets printed!
-
+    # 45,33
     # ------------------------------------------------------------------
     # 2. Mutates the object again, this time from within a function call
     # ------------------------------------------------------------------
@@ -71,7 +71,7 @@ def main():
 
     print('Before:', point)
     mutate_point(point)
-
+    #45,77
     # The next line shows that the INSIDES of   point   has changed.
     print('After: ', point)  # Look at what gets printed!
 
@@ -90,7 +90,7 @@ def main():
     print('Before:', point, point2)
     point2.x = 100
     print('After: ', point, point2)  # Note that  point.x  ALSO changed
-
+    #100, 77
     # ------------------------------------------------------------------
     # 4. Re-assigns the   point   variable to refer to another rg.Point.
     #      This is ASSIGNMENT and NOT mutation.
@@ -101,9 +101,9 @@ def main():
     print('Before:', point, point2)
     point = rg.Point(10, 6)
     print(point, point2)  # Prints the two DIFFERENT rg.Points
-
+    #10,6 100,77
     # ------------------------------------------------------------------
-    # 5. Shows the difference betwee the   is   operator
+    # 5. Shows the difference between the   is   operator
     #      (two things refer to the same place in memory)
     #    and the   ==   operator (two things contain the same data).
     # ------------------------------------------------------------------
@@ -120,16 +120,16 @@ def main():
     point4 = rg.Point(100, 20)
 
     print()
-    print('Before: point3 and point4 are:', point3, point4)
-    print('T or F: point3 is point4?', point3 is point4)
-    print('T or F: point3 == point4?', point3 == point4)
+    print('Before: point3 and point4 are:', point3, point4)  # 100,20 100,20
+    print('T or F: point3 is point4?', point3 is point4)  # False
+    print('T or F: point3 == point4?', point3 == point4)  # True
 
     point3.fill_color = 'blue'
     print()
-    print('After: point3 and point4 are:', point3, point4)
-    print('Fillcolors are:', point3.fill_color, point4.fill_color)
-    print('T or F: point3 is point4?', point3 is point4)
-    print('T or F: point3 == point4?', point3 == point4)
+    print('After: point3 and point4 are:', point3, point4)  # 100, 20 100, 20
+    print('Fillcolors are:', point3.fill_color, point4.fill_color)  # blue
+    print('T or F: point3 is point4?', point3 is point4)  # False
+    print('T or F: point3 == point4?', point3 == point4)  # False
 
     print()
     print('Second, another Point (point5) is assigned')
@@ -142,15 +142,15 @@ def main():
     print('points3, 4 and 5 are:', point3, point4, point5)
     print('Fillcolors are:',
           point3.fill_color, point4.fill_color, point5.fill_color)
-    print('T or F: point3 is point5?', point3 is point5)
-    print('T or F: point3 is point4?', point3 is point4)
-    print('T or F: point4 is point5?', point4 is point5)
+    print('T or F: point3 is point5?', point3 is point5)  # True
+    print('T or F: point3 is point4?', point3 is point4)  # False
+    print('T or F: point4 is point5?', point4 is point5)  # false
 
     print()
     print('Now the == operator:')
-    print('T or F: point3 == point5?', point3 == point5)
-    print('T or F: point3 == point4?', point3 == point4)
-    print('T or F: point4 == point5?', point4 == point5)
+    print('T or F: point3 == point5?', point3 == point5)  # True
+    print('T or F: point3 == point4?', point3 == point4)  # False
+    print('T or F: point4 == point5?', point4 == point5)  # False
 
     print()
     print('Finally, a tricky one that your instruction will explain:')
